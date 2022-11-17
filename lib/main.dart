@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'src/frontend/screens/onboarding/onboarding_screen.dart';
+import 'src/frontend/themes/project_theme.dart';
 
 void main() {
   runApp(const NchVbgApp());
@@ -9,13 +13,11 @@ class NchVbgApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text('NCH VBG'),
-        ),
-      ),
+      theme: ProjectTheme.light,
+      themeMode: ThemeMode.light,
+      home: OnboardingScreen(),
     );
   }
 }
