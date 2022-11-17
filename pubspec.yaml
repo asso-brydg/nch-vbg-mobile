@@ -33,6 +33,7 @@ dependencies:
     sdk: flutter
   gap: ^2.0.1
   get: ^4.6.5
+  iconsax: ^0.0.8
 
 
   # The following adds the Cupertino Icons font to your application.

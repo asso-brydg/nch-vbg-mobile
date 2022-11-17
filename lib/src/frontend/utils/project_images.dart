@@ -4,4 +4,6 @@ class ProjectImages {
   static const String onboarding3 = "assets/images/cuate.png";
 
   static const String authIllustration = "assets/images/amico.png";
+
+  static const String googleIcon = "assets/icons/google-icon.png";
 }

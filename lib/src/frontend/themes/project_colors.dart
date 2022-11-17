@@ -7,4 +7,5 @@ class ProjectColors {
   static const Color textGrey = Color(0XFFA0A0A0);
   static const Color red = Color(0XFFC1292E);
   static const Color blue = Color(0XFF2077FF);
+  static const Color inputBg = Color(0XFFF1F1F1);
 }

@@ -10,8 +10,17 @@ import '../../utils/project_images.dart';
 class OnboardingScreen extends StatelessWidget {
   OnboardingScreen({super.key});
 
+  final PageController pageController = PageController();
   final OnboardingController onboardingController =
       Get.put(OnboardingController());
+
+  runToNextPage() {
+    pageController.animateToPage(
+      pageController.page!.toInt() + 1,
+      duration: const Duration(milliseconds: 400),
+      curve: Curves.easeIn,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +41,14 @@ class OnboardingScreen extends StatelessWidget {
                   style: TextButton.styleFrom(
                     foregroundColor: ProjectColors.red,
                   ),
-                  onPressed: () {},
+                  onPressed: onboardingController.gotoRequestAccessScreen,
                   child: const Text('Passer'),
                 )
               ],
             ),
             Expanded(
               child: PageView(
+                controller: pageController,
                 onPageChanged: (value) {
                   onboardingController.currentPage.value = value;
                 },
@@ -76,18 +86,24 @@ class OnboardingScreen extends StatelessWidget {
                     ),
                   ],
                 ),
-                TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: ProjectColors.blue,
-                  ),
-                  child: const Text(
-                    'Suivant',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                Obx(
+                  () => TextButton(
+                    onPressed: onboardingController.currentPage.value == 2
+                        ? onboardingController.gotoRequestAccessScreen
+                        : runToNextPage,
+                    style: TextButton.styleFrom(
+                      foregroundColor: ProjectColors.blue,
+                    ),
+                    child: Text(
+                      onboardingController.currentPage.value == 2
+                          ? 'Terminer'
+                          : "Suivant",
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ],
