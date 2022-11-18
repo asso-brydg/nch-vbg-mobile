@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 import '../../../backend/controllers/onboarding_controller.dart';
+import '../../components/buttons/slide_button_widget.dart';
 import '../../themes/project_colors.dart';
 import '../../utils/project_constants.dart';
 import '../../utils/project_images.dart';
@@ -73,14 +74,14 @@ class OnboardingScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Obx(() => OnboardingSlideButtonWidget(
+                    Obx(() => SlideButtonWidget(
                           isAstive: onboardingController.currentPage.value == 0,
                         )),
-                    Obx(() => OnboardingSlideButtonWidget(
+                    Obx(() => SlideButtonWidget(
                           isAstive: onboardingController.currentPage.value == 1,
                         )),
                     Obx(
-                      () => OnboardingSlideButtonWidget(
+                      () => SlideButtonWidget(
                         isAstive: onboardingController.currentPage.value == 2,
                       ),
                     ),
@@ -150,30 +151,6 @@ class CustomOnboardingPartial extends StatelessWidget {
           ),
         ),
       ],
-    );
-  }
-}
-
-class OnboardingSlideButtonWidget extends StatelessWidget {
-  const OnboardingSlideButtonWidget({
-    Key? key,
-    this.isAstive = false,
-  }) : super(key: key);
-  final bool isAstive;
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 10),
-      child: AnimatedContainer(
-        duration: const Duration(milliseconds: 300),
-        height: 10,
-        width: isAstive ? 40 : 10,
-        decoration: BoxDecoration(
-          color: isAstive ? ProjectColors.red : ProjectColors.softGrey,
-          borderRadius: BorderRadius.circular(20),
-        ),
-      ),
     );
   }
 }

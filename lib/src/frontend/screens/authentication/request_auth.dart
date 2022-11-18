@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:nchvbg/src/frontend/screens/authentication/register_screen.dart';
+import 'package:nchvbg/src/frontend/screens/home_screen.dart';
 import 'package:nchvbg/src/frontend/themes/project_colors.dart';
 import 'package:nchvbg/src/frontend/utils/project_constants.dart';
 import 'package:nchvbg/src/frontend/utils/project_images.dart';
@@ -75,7 +76,9 @@ class RequestAuth extends StatelessWidget {
             ),
             const Gap(10),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => const HomeScreen());
+              },
               style: TextButton.styleFrom(
                 foregroundColor: ProjectColors.red,
               ),
