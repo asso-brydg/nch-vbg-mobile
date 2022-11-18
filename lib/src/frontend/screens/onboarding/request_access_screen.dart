@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-import 'package:nchvbg/src/frontend/screens/authentication/request_auth.dart';
-import 'package:nchvbg/src/frontend/themes/project_colors.dart';
-import 'package:nchvbg/src/frontend/utils/project_constants.dart';
+
+import '../../themes/project_colors.dart';
+import '../../utils/project_constants.dart';
+import '../authentication/request_auth.dart';
 
 class RequestAccessScreen extends StatelessWidget {
   const RequestAccessScreen({super.key});

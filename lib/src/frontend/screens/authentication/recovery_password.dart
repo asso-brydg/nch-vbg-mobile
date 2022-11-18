@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:nchvbg/src/frontend/screens/authentication/login_screen.dart';
 
-import '../../components/buttons/custom_google_button.dart';
 import '../../components/buttons/custom_large_button_widget.dart';
 import '../../components/fields/custom_text_field_widget.dart';
 import '../../themes/project_colors.dart';

@@ -1,3 +1,3 @@
 class ProjectConstants {
-  static const double marge = 16.0;
+  static const double marge = 20.0;
 }
