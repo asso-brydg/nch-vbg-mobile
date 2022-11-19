@@ -6,6 +6,7 @@ class ProjectImages {
   static const String authIllustration = "assets/images/amico.png";
   static const String profil = "assets/images/profil.png";
   static const String testimony = "assets/images/testimony.png";
+  static const String violences = "assets/images/violences.jpeg";
 
   static const String googleIcon = "assets/icons/google-icon.png";
 }

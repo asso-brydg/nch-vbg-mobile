@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:nchvbg/src/frontend/themes/project_colors.dart';
 import 'package:nchvbg/src/frontend/utils/project_constants.dart';
 import 'package:nchvbg/src/frontend/utils/project_images.dart';
 
+import '../components/buttons/assistance_sos_floating_button.dart';
 import '../components/buttons/slide_button_widget.dart';
+import 'identify_violence.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,54 +19,7 @@ class HomeScreen extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
-        floatingActionButton: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                elevation: 0,
-                backgroundColor: ProjectColors.primary,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 50,
-                  vertical: 15,
-                ),
-              ),
-              child: const Text(
-                'ASSISTANCE',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            const Gap(40),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                elevation: 0,
-                backgroundColor: ProjectColors.red,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 15,
-                ),
-              ),
-              child: const Text(
-                'SOS',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ],
-        ),
+        floatingActionButton: const AssistanceSosFloatingButton(),
         body: Column(
           children: [
             Container(
@@ -339,7 +295,10 @@ class HomeScreen extends StatelessWidget {
                                         ),
                                       ),
                                     ),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Get.to(
+                                          () => const IdentifyViolenceScreen());
+                                    },
                                     child: const Text(
                                       'En savoir plus',
                                       style: TextStyle(
