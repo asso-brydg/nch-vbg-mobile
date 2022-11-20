@@ -3,12 +3,14 @@ import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:nchvbg/src/frontend/screens/all_about_vbg_screen.dart';
 import 'package:nchvbg/src/frontend/themes/project_colors.dart';
 import 'package:nchvbg/src/frontend/utils/project_constants.dart';
 import 'package:nchvbg/src/frontend/utils/project_images.dart';
 
 import '../components/buttons/assistance_sos_floating_button.dart';
 import '../components/buttons/slide_button_widget.dart';
+import '../components/fields/search_field_widget.dart';
 import 'identify_violence.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -64,18 +66,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   const Gap(30),
-                  TextField(
-                    decoration: InputDecoration(
-                      fillColor: ProjectColors.white,
-                      filled: true,
-                      prefixIcon: const Icon(Iconsax.search_normal_1),
-                      hintText: "Que voulez vous savoir aujourd'hui ?",
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
+                  const SearchInputFieldWidget(),
                 ],
               ),
             ),
@@ -162,36 +153,42 @@ class HomeScreen extends StatelessWidget {
                                   ),
                                   const Gap(10),
                                   Expanded(
-                                    child: Container(
-                                      padding: const EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                        color: ProjectColors.blue,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: const [
-                                          Expanded(
-                                            child: Padding(
-                                              padding: EdgeInsets.only(
-                                                right: 25,
-                                              ),
-                                              child: Text(
-                                                'Tous savoir sur les VBG',
-                                                style: TextStyle(
-                                                  color: ProjectColors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
+                                    child: InkWell(
+                                      onTap: () {
+                                        Get.to(() => const AllAboutVBGScreen());
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.all(10),
+                                        decoration: BoxDecoration(
+                                          color: ProjectColors.blue,
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: const [
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsets.only(
+                                                  right: 25,
+                                                ),
+                                                child: Text(
+                                                  'Tous savoir sur les VBG',
+                                                  style: TextStyle(
+                                                    color: ProjectColors.white,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          Icon(
-                                            Iconsax.arrow_right_3,
-                                            color: ProjectColors.white,
-                                          )
-                                        ],
+                                            Icon(
+                                              Iconsax.arrow_right_3,
+                                              color: ProjectColors.white,
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),

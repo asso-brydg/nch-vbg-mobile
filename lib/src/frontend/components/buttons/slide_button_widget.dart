@@ -6,8 +6,12 @@ class SlideButtonWidget extends StatelessWidget {
   const SlideButtonWidget({
     Key? key,
     this.isAstive = false,
+    this.activeColor = ProjectColors.primary,
+    this.inactiveColor = ProjectColors.softGrey,
   }) : super(key: key);
   final bool isAstive;
+  final Color activeColor;
+  final Color inactiveColor;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +22,7 @@ class SlideButtonWidget extends StatelessWidget {
         height: 10,
         width: isAstive ? 50 : 10,
         decoration: BoxDecoration(
-          color: isAstive ? ProjectColors.primary : ProjectColors.softGrey,
+          color: isAstive ? activeColor : inactiveColor,
           borderRadius: BorderRadius.circular(20),
         ),
       ),
