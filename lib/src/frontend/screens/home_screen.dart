@@ -4,6 +4,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:nchvbg/src/frontend/screens/all_about_vbg_screen.dart';
+import 'package:nchvbg/src/frontend/screens/useful_contacts_scree.dart';
 import 'package:nchvbg/src/frontend/themes/project_colors.dart';
 import 'package:nchvbg/src/frontend/utils/project_constants.dart';
 import 'package:nchvbg/src/frontend/utils/project_images.dart';
@@ -118,36 +119,44 @@ class HomeScreen extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Expanded(
-                                    child: Container(
-                                      padding: const EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                        color: ProjectColors.green,
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: const [
-                                          Expanded(
-                                            child: Padding(
-                                              padding: EdgeInsets.only(
-                                                right: 25,
-                                              ),
-                                              child: Text(
-                                                'Contacts utiles',
-                                                style: TextStyle(
-                                                  color: ProjectColors.white,
-                                                  fontSize: 18,
-                                                  fontWeight: FontWeight.w600,
+                                    child: InkWell(
+                                      onTap: () {
+                                        Get.to(
+                                          () => const UsefulContactsScreen(),
+                                        );
+                                      },
+                                      child: Container(
+                                        padding: const EdgeInsets.all(10),
+                                        decoration: BoxDecoration(
+                                          color: ProjectColors.green,
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: const [
+                                            Expanded(
+                                              child: Padding(
+                                                padding: EdgeInsets.only(
+                                                  right: 25,
+                                                ),
+                                                child: Text(
+                                                  'Contacts utiles',
+                                                  style: TextStyle(
+                                                    color: ProjectColors.white,
+                                                    fontSize: 18,
+                                                    fontWeight: FontWeight.w600,
+                                                  ),
                                                 ),
                                               ),
                                             ),
-                                          ),
-                                          Icon(
-                                            Iconsax.arrow_right_3,
-                                            color: ProjectColors.white,
-                                          )
-                                        ],
+                                            Icon(
+                                              Iconsax.arrow_right_3,
+                                              color: ProjectColors.white,
+                                            )
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   ),
