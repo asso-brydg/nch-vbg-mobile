@@ -3,16 +3,18 @@ import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:nchvbg/src/frontend/screens/all_about_vbg_screen.dart';
-import 'package:nchvbg/src/frontend/screens/useful_contacts_scree.dart';
-import 'package:nchvbg/src/frontend/themes/project_colors.dart';
-import 'package:nchvbg/src/frontend/utils/project_constants.dart';
-import 'package:nchvbg/src/frontend/utils/project_images.dart';
+import 'package:nchvbg/src/frontend/screens/ask_advise_screen.dart';
+import 'package:nchvbg/src/frontend/screens/assistance_screen.dart';
 
 import '../components/buttons/assistance_sos_floating_button.dart';
 import '../components/buttons/slide_button_widget.dart';
 import '../components/fields/search_field_widget.dart';
+import '../themes/project_colors.dart';
+import '../utils/project_constants.dart';
+import '../utils/project_images.dart';
+import 'all_about_vbg_screen.dart';
 import 'identify_violence.dart';
+import 'useful_contacts_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,7 +24,9 @@ class HomeScreen extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light,
       child: Scaffold(
-        floatingActionButton: const AssistanceSosFloatingButton(),
+        floatingActionButton: const AssistanceSosFloatingButton(
+          isAdvise: false,
+        ),
         body: Column(
           children: [
             Container(
@@ -86,33 +90,38 @@ class HomeScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             Expanded(
-                              child: Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    color: ProjectColors.primary,
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: const [
-                                      Icon(
-                                        Iconsax.message_2,
-                                        color: ProjectColors.white,
-                                        size: 50,
-                                      ),
-                                      Gap(10),
-                                      Text(
-                                        "Besoin de parler à quelqu'un ?",
-                                        style: TextStyle(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w700,
-                                          height: 1.3,
-                                          fontSize: 18,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Get.to(() => const AssistanceScreen());
+                                },
+                                child: Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      color: ProjectColors.primary,
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: const [
+                                        Icon(
+                                          Iconsax.message_2,
+                                          color: ProjectColors.white,
+                                          size: 50,
                                         ),
-                                      ),
-                                    ],
-                                  )),
+                                        Gap(10),
+                                        Text(
+                                          "Besoin de parler à quelqu'un ?",
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.w700,
+                                            height: 1.3,
+                                            fontSize: 18,
+                                          ),
+                                        ),
+                                      ],
+                                    )),
+                              ),
                             ),
                             const Gap(10),
                             Expanded(
@@ -363,7 +372,6 @@ class HomeScreen extends StatelessWidget {
                                                 fontSize: 16,
                                               ),
                                             ),
-                                            const Gap(10),
                                             Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment

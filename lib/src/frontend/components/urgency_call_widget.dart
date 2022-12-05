@@ -42,7 +42,6 @@ class UrgencyCallWidget extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const Gap(5),
                 Text(
                   label,
                   style: const TextStyle(

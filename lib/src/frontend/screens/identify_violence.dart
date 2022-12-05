@@ -211,7 +211,6 @@ class _ViolenceDetailTabBarState extends State<ViolenceDetailTabBar>
                       ),
                       const Gap(30),
                       const CustomTitleWidget(title: "La santé"),
-                      const Gap(20),
                       const ServicesContactWidget(
                         name: "CMS Tokoin Hôpital",
                         adresse:
@@ -219,7 +218,6 @@ class _ViolenceDetailTabBarState extends State<ViolenceDetailTabBar>
                       ),
                       const Gap(30),
                       const CustomTitleWidget(title: "La justice"),
-                      const Gap(20),
                       const ServicesContactWidget(
                         name: "Tribunal de Lomé",
                         adresse:
