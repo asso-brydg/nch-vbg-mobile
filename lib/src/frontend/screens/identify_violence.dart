@@ -21,7 +21,9 @@ class IdentifyViolenceScreen extends StatelessWidget {
         title: const Text('Identifier une violence'),
         centerTitle: false,
       ),
-      floatingActionButton: const AssistanceSosFloatingButton(),
+      floatingActionButton: const AssistanceSosFloatingButton(
+        isAdvise: true,
+      ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           horizontal: ProjectConstants.marge,

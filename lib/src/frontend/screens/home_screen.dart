@@ -155,6 +155,7 @@ class HomeScreen extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: ProjectColors.white,
                                                     fontSize: 18,
+                                                    height: 1.2,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),
@@ -196,6 +197,7 @@ class HomeScreen extends StatelessWidget {
                                                   style: TextStyle(
                                                     color: ProjectColors.white,
                                                     fontSize: 18,
+                                                    height: 1.2,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                                 ),

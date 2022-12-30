@@ -1,7 +1,6 @@
 import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:nchvbg/src/frontend/themes/project_colors.dart';
 import 'package:nchvbg/src/frontend/utils/project_images.dart';
 

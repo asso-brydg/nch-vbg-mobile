@@ -7,6 +7,8 @@ import 'package:nchvbg/src/frontend/themes/project_colors.dart';
 import 'package:nchvbg/src/frontend/utils/project_constants.dart';
 import 'package:nchvbg/src/frontend/utils/project_images.dart';
 
+import '../components/buttons/assistance_sos_floating_button.dart';
+
 class AllAboutVBGScreen extends StatelessWidget {
   const AllAboutVBGScreen({super.key});
 
@@ -17,34 +19,8 @@ class AllAboutVBGScreen extends StatelessWidget {
         title: const Text("Les Violences Basées sur le Genre"),
         centerTitle: false,
       ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: ProjectConstants.marge * 2,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Expanded(
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: ProjectColors.primary,
-                  padding: const EdgeInsets.symmetric(vertical: 15),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50),
-                  ),
-                ),
-                child: const Text(
-                  'Demander conseils',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            )
-          ],
-        ),
+      floatingActionButton: const AssistanceSosFloatingButton(
+        isAdvise: true,
       ),
       body: Padding(
         padding: const EdgeInsets.only(
